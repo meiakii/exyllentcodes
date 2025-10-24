@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xyrell Felicity Maralit | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Typing animation
+    document.addEventListener('DOMContentLoaded', function() {
+      const roles = [
+        'Full-Stack Web Developer',
+        'General Virtual Assistant',
+        'Game Tester'
+      ];
+      let roleIndex = 0, charIndex = 0, typing = true;
+      const typingEl = document.getElementById('typing');
+      function typeRole() {
+        if (!typingEl) return;
+        if (typing) {
+          typingEl.textContent = roles[roleIndex].slice(0, charIndex + 1);
+          if (charIndex < roles[roleIndex].length) {
+            charIndex++;
+            setTimeout(typeRole, 60);
+          } else {
+            typing = false;
+            setTimeout(typeRole, 1200);
+          }
+        } else {
+          if (charIndex > 0) {
+            charIndex--;
+            typingEl.textContent = roles[roleIndex].slice(0, charIndex);
+            setTimeout(typeRole, 30);
+          } else {
+            typing = true;
+            roleIndex = (roleIndex + 1) % roles.length;
+            setTimeout(typeRole, 400);
+          }
+        }
+      }
+      typeRole();
+    });
+    // Smooth scroll for nav links
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('nav a, .cta-btn').forEach(link => {
+        link.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href && href.startsWith('#')) {
+            e.preventDefault();
+            document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    });
+    // Contact form (demo only)
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      alert('Thank you for reaching out! (Demo: form not actually sent)');
+      e.target.reset();
+    }
+  </script>
+</head>
+<body>
+<canvas class="animated-bg"></canvas>
+<header>
+  <div class="logo">eXYllent Codes</div>
+  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+  </button>
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="certifications.html">Certifications</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact Me</a>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="certifications.html">Certifications</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact Me</a>
+  </div>
+</header>
+<div class="background-overlay"></div>
+<main>
+  <section class="hero" id="hero">
+    <div class="hero-img">
+      <img src="picture.jpg" alt="Xyrell Felicity Maralit portrait" class="hero-photo">
+    </div>
+    <div class="hero-content">
+      <h1>Hi, I'm Xyrell Felicity Maralit</h1>
+      <div>I am a <span class="typing" id="typing"></span> <span aria-hidden="true">⌨️</span></div>
+      <button class="aboutme-btn" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+        About Me <span aria-hidden="true" style="font-size:1.3em;vertical-align:middle;">&#8595;</span>
+      </button>
+    </div>
+  </section>
+  <section class="about" id="about">
+    <div class="about-gallery">
+      <img src="gawad batang bayani.jpg" alt="Gawad Batang Bayani">
+      <img src="perform.jpg" alt="Perform">
+      <img src="profile.jpg" alt="Profile">
+    </div>
+    <div class="about-content">
+      <h2>About Me</h2>
+      <div>
+        <p>Hi! I'm Xyrell Felicity Maralit, the mind behind <b>eXYllent Codes</b> — a personal brand built on precision, creativity, and clean execution. I'm currently pursuing a Bachelor of Science in Information Technology, consistently maintaining strong academic performance as a Dean's Lister.</p>
+
+        <p><b>Recent Achievements:</b></p>
+        <ul class="about-specialties">
+          <li>🏆 <b>3rd Placer</b> in Byte Forward Hackathon by DTI Philippines</li>
+          <li>🎓 <b>DICT General Virtual Assistance Graduate</b> with 100% marks</li>
+          <li>📜 <b>Computer Services Servicing NC II Passer</b></li>
+          <li>🏛️ <b>Civil Service Passer</b> (Professional Eligibility) - August 2025</li>
+          <li>🔒 <b>Microsoft Cybersecurity Course</b> - Security, Compliance, and Identity Fundamentals</li>
+          <li>💼 <b>MSME Training Program</b> - Establishing & Operating Micro-Small Medium Enterprises</li>
+        </ul>
+
+        <p><b>I specialize in:</b></p>
+        <ul class="about-specialties">
+          <li>UI/UX Design that's not just visually appealing but user-driven</li>
+          <li>Full-Stack Web Development with fluency in HTML, CSS, JavaScript, and backend logic</li>
+          <li>Programming languages like Java, Python, C++, and networking with Cisco technologies</li>
+        </ul>
+        <p>Beyond development, I actively contribute to the game development space by offering game testing and UX evaluation for indie game developers and clients. I provide constructive feedback, usability suggestions, and insights that elevate gameplay experiences and player satisfaction.</p>
+        <p>I've recently completed a 21-day intensive training with DICT SPARK in General Virtual Assistance, equipping me with skills in productivity tools, client communication, social media management, and business support systems.</p>
+        <p>💼 <b>I currently offer services in:</b></p>
+        <ul class="about-services">
+          <li>Full-Stack Web Development</li>
+          <li>General Virtual Assistance</li>
+          <li>Graphic Design & Branding</li>
+        </ul>
+        <p>With every project, I bring a mix of creativity, logic, and user empathy — driven by a passion to make technology feel human and impactful.</p>
+      </div>
+      <div class="skills">
+        <span class="skill-badge">HTML</span>
+        <span class="skill-badge">CSS</span>
+        <span class="skill-badge">JavaScript</span>
+        <span class="skill-badge">Java</span>
+        <span class="skill-badge">Python</span>
+        <span class="skill-badge">C++</span>
+        <span class="skill-badge">WordPress</span>
+        <span class="skill-badge">Figma</span>
+        <span class="skill-badge">Animation</span>
+        <span class="skill-badge">Canva</span>
+        <span class="skill-badge">Excel</span>
+        <span class="skill-badge">Cisco</span>
+      </div>
+      <ul class="about-list">
+        <li>📍 <b>Location:</b> Philippines</li>
+        <li>🎓 <b>Student</b> | Active in Student Orgs</li>
+        <li>🎯 <b>Passion:</b> Tech, Events, Design</li>
+      </ul>
+    </div>
+  </section>
+</main>
+<script>
+  // Typing animation
+  document.addEventListener('DOMContentLoaded', function() {
+    const roles = [
+      'Full-Stack Web Developer',
+      'General Virtual Assistant',
+      'Game Tester'
+    ];
+    let roleIndex = 0, charIndex = 0, typing = true;
+    const typingEl = document.getElementById('typing');
+    function typeRole() {
+      if (!typingEl) return;
+      if (typing) {
+        typingEl.textContent = roles[roleIndex].slice(0, charIndex + 1);
+        if (charIndex < roles[roleIndex].length) {
+          charIndex++;
+          setTimeout(typeRole, 60);
+        } else {
+          typing = false;
+          setTimeout(typeRole, 1200);
+        }
+      } else {
+        if (charIndex > 0) {
+          charIndex--;
+          typingEl.textContent = roles[roleIndex].slice(0, charIndex);
+          setTimeout(typeRole, 30);
+        } else {
+          typing = true;
+          roleIndex = (roleIndex + 1) % roles.length;
+          setTimeout(typeRole, 400);
+        }
+      }
+    }
+    typeRole();
+  });
+  // Smooth scroll for nav links
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('nav a, .cta-btn').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  });
+  // Futuristic animated gradient/particles background
+  document.addEventListener('DOMContentLoaded', function() {
+    const canvas = document.querySelector('.animated-bg');
+    const ctx = canvas.getContext('2d');
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+    // Particle system
+    const colors = ['#00eaff', '#a259ff', '#fff', '#0ff', '#09f'];
+    const particles = Array.from({length: 60}, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      r: 60 + Math.random() * 60,
+      dx: (Math.random() - 0.5) * 0.3,
+      dy: (Math.random() - 0.5) * 0.3,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      alpha: 0.14 + Math.random() * 0.08
+    }));
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+      for (const p of particles) {
+        const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);
+        grad.addColorStop(0, p.color + 'cc');
+        grad.addColorStop(1, 'transparent');
+        ctx.globalAlpha = p.alpha;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, 2 * Math.PI);
+        ctx.fillStyle = grad;
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    }
+    function animate() {
+      for (const p of particles) {
+        p.x += p.dx;
+        p.y += p.dy;
+        if (p.x < -p.r) p.x = width + p.r;
+        if (p.x > width + p.r) p.x = -p.r;
+        if (p.y < -p.r) p.y = height + p.r;
+        if (p.y > height + p.r) p.y = -p.r;
+      }
+      draw();
+      requestAnimationFrame(animate);
+    }
+    animate();
+    window.addEventListener('resize', () => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    });
+  });
+  // Mobile nav toggle
+  document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    navToggle.addEventListener('click', function() {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !expanded);
+      mobileNav.setAttribute('aria-hidden', expanded);
+      mobileNav.classList.toggle('open', !expanded);
+    });
+    // Close mobile nav on link click
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function() {
+        navToggle.setAttribute('aria-expanded', false);
+        mobileNav.setAttribute('aria-hidden', true);
+        mobileNav.classList.remove('open');
+      });
+    });
+  });
+</script>
+</body>
+</html>
